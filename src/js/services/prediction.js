@@ -38,11 +38,11 @@ angular.module('App.services.Prediction', [])
 
                     });
                     southBound = southBound.map(function(a){
-                        return a + " min"
+                        return " " + a + " min"
                     })
 
                     northBound = northBound.map(function(a){
-                        return a + " min"
+                        return " " + a + " min"
                     })
 
                     done(southBound, northBound);

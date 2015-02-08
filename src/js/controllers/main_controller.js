@@ -22,10 +22,13 @@ angular.module('App.controllers.Main', [
                             $scope.southBound = southBound;
                             $scope.northBound = northBound;
 
+                            var message = "Northbound: " + northBound.slice(0,2).toString() +
+                                            "\nSouthbound: " + southBound.slice(0,2).toString();
+
                             window.plugin.notification.local.add({
                                 id:         "notifications",  // A unique id of the notifiction
-                                message:    southBound.toString(),  // The message that is displayed
-                                title:      "test",  // The title of the message
+                                message:    message,  // The message that is displayed
+                                title:      "You're near: " + $scope.station,  // The title of the message
                             });
                         });
                     }
