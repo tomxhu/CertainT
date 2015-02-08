@@ -20,8 +20,16 @@ angular.module('App.controllers.Main', [
                         getPrediction(data.stop[0].parent_station, function(southBound, northBound){
                             console.log(southBound);
                             console.log(northBound);
-                            $scope.southBound = southBound;
-                            $scope.northBound = northBound;
+                            $scope.southBound = southBound.toString();
+                            $scope.northBound = northBound.toString();
+
+                            southBound = southBound.map(function(a){
+                                return " " + a;
+                            })
+
+                            northBound = northBound.map(function(a){
+                                return " " + a;
+                            })
 
                             var message = "Northbound: " + northBound.slice(0,2).toString() +
                                             "\nSouthbound: " + southBound.slice(0,2).toString();
