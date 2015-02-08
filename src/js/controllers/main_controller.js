@@ -58,7 +58,7 @@ angular.module('App.controllers.Main', [
                 $scope.lat = position.coords.latitude;
                 $scope.lon = position.coords.longitude;
                 getStation(position.coords.latitude, position.coords.longitude, function(data){
-                    if (data.stop[0].distance < .25) {
+                    if (data.stop[0].distance < 100) {
                         $scope.station = data.stop[0].parent_station_name;
                         getPrediction(data.stop[0].parent_station, function(southBound, northBound){
                             console.log(southBound);
@@ -86,7 +86,7 @@ angular.module('App.controllers.Main', [
             //var options = {maximumAge:500, frequency: 10000, timeout:100000, enableHighAccuracy:true};
             //var navID = navigator.geolocation.watchPosition(onSuccess, onError, options);
             navigator.geolocation.getCurrentPosition(onSuccess);
-            var id = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000);
+            var id = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*60);
 
         });
     });
