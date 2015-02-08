@@ -20,12 +20,14 @@
         <service android:name="com.plugin.gcm.GCMIntentService" />
         <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.Receiver" />
         <receiver android:exported="false" android:name="de.appplant.cordova.plugin.localnotification.DeleteIntentReceiver" />
+        <activity android:launchMode="singleInstance" android:name="de.appplant.cordova.plugin.localnotification.ReceiverActivity" android:theme="@android:style/Theme.NoDisplay" />
+        <receiver android:name="de.appplant.cordova.plugin.localnotification.Receiver" />
         <receiver android:name="de.appplant.cordova.plugin.localnotification.Restore">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <activity android:launchMode="singleInstance" android:name="de.appplant.cordova.plugin.localnotification.ReceiverActivity" android:theme="@android:style/Theme.NoDisplay" />
+        <activity android:launchMode="singleInstance" android:name="de.appplant.cordova.plugin.localnotification.ReceiverActivity" />
     </application>
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

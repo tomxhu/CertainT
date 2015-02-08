@@ -11,6 +11,7 @@ angular.module('App.controllers.Main', [
             var int = 0;
 
             function onSuccess(position) {
+
                 $scope.lat = position.coords.latitude;
                 $scope.lon = position.coords.longitude;
                 getStation(position.coords.latitude, position.coords.longitude, function(data){
@@ -26,10 +27,12 @@ angular.module('App.controllers.Main', [
                                             "\nSouthbound: " + southBound.slice(0,2).toString();
 
                             window.plugin.notification.local.add({
-                                id:         "notifications",  // A unique id of the notifiction
+                                //id:         1,  // A unique id of the notifiction
                                 message:    message,  // The message that is displayed
                                 title:      "You're near: " + $scope.station,  // The title of the message
                             });
+
+
                         });
                     }
                 });
@@ -45,7 +48,8 @@ angular.module('App.controllers.Main', [
             //var options = {maximumAge:500, frequency: 10000, timeout:100000, enableHighAccuracy:true};
             //var navID = navigator.geolocation.watchPosition(onSuccess, onError, options);
             navigator.geolocation.getCurrentPosition(onSuccess);
-            var id = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*60);
+            var id = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*3*60);
+
 
         });
     });

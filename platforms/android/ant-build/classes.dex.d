@@ -22,6 +22,7 @@
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/LocalNotification$7.class \
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/LocalNotification$8.class \
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/LocalNotification.class \
+/Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/Options.class \
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/Receiver.class \
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/ReceiverActivity.class \
 /Users/tommyhu/Documents/Projects/app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/localnotification/Restore.class \

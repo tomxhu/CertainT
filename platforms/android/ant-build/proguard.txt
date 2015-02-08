@@ -14,11 +14,13 @@
 -keep class de.appplant.cordova.plugin.localnotification.DeleteIntentReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:21
+# view AndroidManifest.xml #generated:24
 -keep class de.appplant.cordova.plugin.localnotification.Receiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:28
+# view AndroidManifest.xml #generated:23
+# view AndroidManifest.xml #generated:30
 -keep class de.appplant.cordova.plugin.localnotification.ReceiverActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:23
+# view AndroidManifest.xml #generated:25
 -keep class de.appplant.cordova.plugin.localnotification.Restore { <init>(...); }
 
