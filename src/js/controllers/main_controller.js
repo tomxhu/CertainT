@@ -23,13 +23,13 @@ angular.module('App.controllers.Main', [
                             $scope.southBound = southBound.toString();
                             $scope.northBound = northBound.toString();
 
-                            southBound = southBound.map(function(a){
-                                return " " + a;
-                            })
-
-                            northBound = northBound.map(function(a){
-                                return " " + a;
-                            })
+                            //southBound = southBound.map(function(a){
+                            //    return " " + a;
+                            //})
+                            //
+                            //northBound = northBound.map(function(a){
+                            //    return " " + a;
+                            //})
 
                             var message = "Northbound: " + northBound.slice(0,2).toString() +
                                             "\nSouthbound: " + southBound.slice(0,2).toString();
@@ -56,8 +56,16 @@ angular.module('App.controllers.Main', [
             //var options = {maximumAge:500, frequency: 10000, timeout:100000, enableHighAccuracy:true};
             //var navID = navigator.geolocation.watchPosition(onSuccess, onError, options);
             navigator.geolocation.getCurrentPosition(onSuccess);
-            var id = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*3*60);
+            var locationCheck = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*3*60);
 
+            $scope.stopUpdate = function () {
+                $scope.station = 'STOPPED';
+                cancel(locationCheck);
+            }
+            $scope.startUpdate = function () {
+                $scope.station = 'RESTARTED';
+                locationCheck = $interval(function(){navigator.geolocation.getCurrentPosition(onSuccess)}, 1000*3*60);
+            }
 
         });
     });
